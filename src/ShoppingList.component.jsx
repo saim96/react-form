@@ -1,4 +1,5 @@
 import { useState } from "react";
+import ShoppingListForm from "./ShoppingListForm.component";
 
 export default function ShoppingList() {
   const [items, setItems] = useState([
@@ -6,6 +7,12 @@ export default function ShoppingList() {
     { id: 2, product: "Eggs", quantity: 12 },
   ]);
 
+  const addItem = (item) => {
+    setItems((currItems) => {
+      return [...currItems, { ...item, id: 9 }];
+    });
+
+  };
 
   return (
     <div>
@@ -17,9 +24,7 @@ export default function ShoppingList() {
           </li>
         ))}
       </ul>
-      <p>
-      ________________________________________________________ + ___________________________________________________
-    </p>
+      <ShoppingListForm addItem={addItem} />
     </div>
   );
 }
