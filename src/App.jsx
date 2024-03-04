@@ -1,12 +1,14 @@
 import UsernameForm from "./UsernameForm";
-import SignupForm from "./SignupForm"
+import SignupForm from "./SignupForm";
+import BettersignupForm from "./BetterSignupForm.component";
 import "./App.css";
 
 function App() {
   return (
     <>
-    <SignupForm/>
-    <UsernameForm/>
+      <BettersignupForm />
+      <SignupForm />
+      <UsernameForm />
     </>
   );
 }
