@@ -1,45 +1,25 @@
 import { useState } from "react";
 
-export default function ShoppingListForm() {
-  const [formData, setFormData] = useState({
-    product: "",
-    quantity: "",
-  });
-  const handleChange = (evt) => {
-    setFormData((currData) => {
-      return {
-        ...currData,
-        [evt.target.name]: evt.target.value,
-      };
-    });
-  };
+export default function ShoppingList() {
+  const [items, setItems] = useState([
+    { id: 1, product: "Bananas", quantity: 8 },
+    { id: 2, product: "Eggs", quantity: 12 },
+  ]);
+
+
   return (
-    <form>
-      <h2>4- Shopping List Form </h2>
-      <h3>Product is: {formData.product} </h3>
-      <label htmlFor="product"> Product Name</label>
-      <input
-        type="text"
-        placeholder="product name"
-        name="product"
-        id="product"
-        onChange={handleChange}
-        value={formData.product}
-      />
-      <h3>Qty is: {formData.quantity} </h3>
-      <label htmlFor="quantity"> Quantity</label>
-      <input
-        type="number"
-        placeholder="1"
-        name="quantity"
-        id="quantity"
-        onChange={handleChange}
-        value={formData.quantity}
-      />
-      <button> Add Item</button>
+    <div>
+      <h2> 5- Shopping List </h2>
+      <ul>
+        {items.map((i) => (
+          <li key={i.id}>
+            {i.product} - {i.quantity}
+          </li>
+        ))}
+      </ul>
       <p>
-        ________________________________________________________________________________________________
-      </p>
-    </form>
+      ________________________________________________________ + ___________________________________________________
+    </p>
+    </div>
   );
 }
