@@ -6,6 +6,7 @@ function UsernameForm() {
   };
   return (
     <div>
+      <h3>1- Username</h3>
       <label htmlFor="username">Enter a username</label>
       <input
         type="text"
@@ -15,6 +16,7 @@ function UsernameForm() {
         id="username"
       />
       <button>Submit</button>
+      <p>________________________________________________________________________________________________</p>
     </div>
   );
 }

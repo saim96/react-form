@@ -14,6 +14,7 @@ function SignupForm() {
   };
   return (
     <div>
+    <h3>2- Signup Form</h3>
       <label htmlFor="firstname">First Name</label>
       <input
         type="text"
@@ -31,6 +32,8 @@ function SignupForm() {
         id="lastname"
       />
       <button onClick={handleSubmit}>Submit</button>
+      <p>________________________________________________________________________________________________</p>
+
     </div>
   );
 }
