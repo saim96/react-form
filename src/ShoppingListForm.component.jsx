@@ -15,15 +15,14 @@ export default function ShoppingListForm({ addItem }) { // shoppinglistform is e
   };
   const handleSubmit = (e) => { //Event handler functions expect an event object as a parameter.
     e.preventDefault();
-    console.log("handle submit");
     addItem(formData); 
     // on submit whatever formData is, is packed into addItem and addItem is executed.
-  }; // this Child will invole the addItem function present in Parent.
+ setFormData({product: "", quantity: 0});
+  }; // this Child will invoke the addItem function present in Parent.
   return (
     
     <form onSubmit={handleSubmit}> {/* handleSubmit is a intermediate function */}
       <h3>4- Shopping List Form </h3>
-      <h4>Product is: </h4>
       <label htmlFor="product"> Product Name</label>
       <input
         type="text"

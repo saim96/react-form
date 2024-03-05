@@ -1,10 +1,11 @@
 import { useState } from "react";
+import {v4 as uuid} from "uuid";
 import ShoppingListForm from "./ShoppingListForm.component";
 
 export default function ShoppingList() {
   const [items, setItems] = useState([
-    { id: 1, product: "Bananas", quantity: 8 },
-    { id: 2, product: "Eggs", quantity: 12 },
+    { id: uuid(), product: "Bananas", quantity: 8 },
+    { id: uuid(), product: "Eggs", quantity: 12 },
   ]);
   // I defined a function in here called addItem.
   // pass it down to my ShoppingListForm.
@@ -13,7 +14,7 @@ export default function ShoppingList() {
 
   const addItem = (item) => {
     setItems((currItems) => {
-      return [...currItems, { ...item, id: 9 }];
+      return [...currItems, { ...item, id: uuid() }];
     });
   };
 //   gonna call this current items.
