@@ -1,6 +1,7 @@
 import { useState } from "react";
 import {v4 as uuid} from "uuid";
-import ShoppingListForm from "./ShoppingListForm.component";
+// import ShoppingListForm from "./ShoppingListForm.component";
+import ValidatedShoppingListForm from "./ValidatedShoppingListForm.component";
 
 export default function ShoppingList() {
   const [items, setItems] = useState([
@@ -34,8 +35,10 @@ export default function ShoppingList() {
           </li>
         ))}
       </ul>
-      <ShoppingListForm addItem={addItem} />
-      {/* whenever this will be rendered this will call addItem from Child component */}
+      <ValidatedShoppingListForm addItem={addItem} />
+      
+      {/*<ShoppingListForm addItem={addItem} /> 
+      whenever this will be rendered this will call addItem from Child component */}
     </div>
   );
 }
